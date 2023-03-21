@@ -23,7 +23,7 @@ export const PokemonDetail = ({ name, onClose }: PokemonDetailProps) => {
 	return (
 		<div className={styles.modalOverlay}>
 			{pokemonDetail && (
-				<div className={styles.modalContent}>
+				<div className={`${styles.modalContent} ${styles.pokemonCard}`}>
 					<h1>{name}</h1>
 					<p>Height: {height}</p>
 					<p>Weight: {weight}</p>

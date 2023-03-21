@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { PokemonDetail } from "../PokemonDetail";
 import styles from "../../styles/PokemonList.module.scss";
 import { DOTS, usePagination } from "@/hooks/usePagination";
+import m from "../../../public/pokemon.png";
+import Image from "next/image";
 
 export const PokemonList = () => {
 	const PAGE_LIMIT = 20;
@@ -25,12 +27,12 @@ export const PokemonList = () => {
 
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>Pokemons</h1>
+			<Image src={m} alt="pokemon" width={400} height={undefined} />
 			<ul className={styles.list}>
 				{pokemons.map(({ name }) => (
 					<li className={styles.item} key={name}>
-						<button className={styles.button} onClick={() => setSelectedPokemonName(name)}>
-							{name}
+						<button className={styles.pokeballButton} onClick={() => setSelectedPokemonName(name)}>
+							<span>{name}</span>
 						</button>
 					</li>
 				))}

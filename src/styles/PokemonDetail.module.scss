@@ -8,10 +8,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 2;
 }
 
 .modalContent {
-	background-color: #f2f2f2;
+	background-color: white;
 	padding: 2rem;
 	border-radius: 10px;
 	max-width: 600px;
@@ -27,7 +28,7 @@
 	font-size: 2.5rem;
 	margin-top: 0;
 	text-transform: capitalize;
-	color: #555;
+	color: var(--modal-background);
 }
 
 .modalContent img {
@@ -39,20 +40,27 @@
 
 .modalContent ul {
 	list-style: none;
-	margin: 1rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
 	padding: 0;
+	margin-bottom: 10px;
 }
 
 .modalContent li {
-	font-size: 1.2rem;
-	margin: 0.5rem 0;
-	color: #555;
+	margin: 0 10px;
+	font-size: 18px;
 	text-transform: capitalize;
+	color: #777;
+	background-color: #eee;
+	padding: 5px 10px;
+	border-radius: 20px;
 }
 
 .modalContent button {
-	background-color: #ff2e63;
-	color: #fff;
+	background-color: var(--red-pink);
+	color: white;
 	border: none;
 	padding: 1rem 2rem;
 	border-radius: 10px;
@@ -62,5 +70,5 @@
 }
 
 .modalContent button:hover {
-	background-color: #d92052;
+	background-color: var(--red-pink-hover);
 }
