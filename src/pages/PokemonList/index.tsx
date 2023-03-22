@@ -39,7 +39,9 @@ export const PokemonList = () => {
 			</ul>
 			{selectedPokemonName && <PokemonDetail name={selectedPokemonName} onClose={() => setSelectedPokemonName(null)} />}
 			<div className={styles.pagination}>
-				<button className={styles.paginationButton} disabled={currentPage === 1} onClick={() => setCurrentPage(prev => prev - 1)}>
+				<button
+					className={`${styles.paginationButton}${currentPage === 1 ? ` ${styles.disabled}` : ""}`}
+					onClick={() => setCurrentPage(prev => prev - 1)}>
 					&laquo;
 				</button>
 				{paginationRange?.map(pageNumber => (
@@ -58,7 +60,9 @@ export const PokemonList = () => {
 						)}
 					</>
 				))}
-				<button className={styles.paginationButton} disabled={currentPage === totalPages} onClick={() => setCurrentPage(prev => prev + 1)}>
+				<button
+					className={`${styles.paginationButton}${currentPage === totalPages ? ` ${styles.disabled}` : ""}`}
+					onClick={() => setCurrentPage(prev => prev + 1)}>
 					&raquo;
 				</button>
 			</div>
