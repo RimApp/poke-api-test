@@ -2,6 +2,7 @@ import styles from "../../styles/PokemonDetail.module.scss";
 import { Pokemon } from "@/types/Pokemon";
 import { useEffect, useState } from "react";
 import { getPokemonDetail } from "@/api/pokemon";
+import Image from "next/image";
 
 interface PokemonDetailProps {
 	name: string;
@@ -25,9 +26,9 @@ export const PokemonDetail = ({ name, onClose }: PokemonDetailProps) => {
 			{pokemonDetail && (
 				<div className={`${styles.modalContent} ${styles.pokemonCard}`}>
 					<h1>{name}</h1>
-					<p>Height: {height}</p>
-					<p>Weight: {weight}</p>
-					{sprites?.front_default && <img src={sprites.front_default} alt={name} />}
+					<p>Height: {(height ?? 0) / 10}m</p>
+					<p>Weight: {(weight ?? 0) / 10}kg</p>
+					{sprites?.front_default && <Image src={sprites.front_default} alt={name} width={96} height={96} />}
 					<ul>
 						<p>Types:</p>
 						{types?.map(({ type }) => (
